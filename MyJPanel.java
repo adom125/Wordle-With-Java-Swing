@@ -7,22 +7,22 @@ import javax.swing.border.Border;
 public class MyJPanel extends JPanel implements ActionListener, KeyListener, FocusListener
 {
     private static int curRow = 0;
-	private static int curColumn = 0;
-	private static Wordle wordle = null;
-    private static JTextField[][] textFields = new JTextField[6][5]; //CAN I KEEP THIS STATIC OR NO
-	private String pressedButton;
-	private JButton theButton;
+    private static int curColumn = 0;
+    private static Wordle wordle = null;
+    private static JTextField[][] textFields = new JTextField[6][5]; 
+    private String pressedButton;
+    private JButton theButton;
 	
 	
-	public MyJPanel(String inNameButton, JButton inButton) throws FileNotFoundException
-	{	             
-		pressedButton = inNameButton;
-		theButton = inButton;
-		this.setBackground(Color.WHITE);
-		wordle = new Wordle();
-		//textFields = new JTextField[6][5];
+    public MyJPanel(String inNameButton, JButton inButton) throws FileNotFoundException
+    {	             
+	pressedButton = inNameButton;
+	theButton = inButton;
+	this.setBackground(Color.WHITE);
+	wordle = new Wordle();
+	//textFields = new JTextField[6][5];
        // curRow = 0;
-		//curColumn = 0;
+	//curColumn = 0;
         this.setLayout (new GridLayout(6,5,3,3));
         
         for(int r = 0; r < textFields.length; r++)
