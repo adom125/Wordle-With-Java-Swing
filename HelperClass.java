@@ -5,7 +5,6 @@ import javax.swing.*;
 public class HelperClass extends JPanel implements ActionListener
 {
     private final String BUTTONTXT = "PLAY AGAIN";
-    private String gameName;
     private JButton playButton;
     private JPanel thePanel;
     private JPanel otherPanel;
@@ -26,34 +25,61 @@ public class HelperClass extends JPanel implements ActionListener
     	addAllPanel.setLayout(new BorderLayout());
     	
     	keyMatrix[0][0] = new JButton("Q");
+        keyMatrix[0][0].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[0][1] = new JButton("W");
+        keyMatrix[0][1].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[0][2] = new JButton("E");
+        keyMatrix[0][2].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[0][3] = new JButton("R");
+        keyMatrix[0][3].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[0][4] = new JButton("T");
+        keyMatrix[0][4].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[0][5] = new JButton("Y");
+        keyMatrix[0][5].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[0][6] = new JButton("U");
+        keyMatrix[0][6].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[0][7] = new JButton("I");
+        keyMatrix[0][7].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[0][8] = new JButton("O");
+        keyMatrix[0][8].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[0][9] = new JButton("P");
+        keyMatrix[0][9].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][0] = new JButton("A");
+        keyMatrix[1][0].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][1] = new JButton("S");
+        keyMatrix[1][1].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][2] = new JButton("D");
+        keyMatrix[1][2].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][3] = new JButton("F");
+        keyMatrix[1][3].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][4] = new JButton("G");
+        keyMatrix[1][4].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][5] = new JButton("H");
+        keyMatrix[1][5].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][6] = new JButton("J");
+        keyMatrix[1][6].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][7] = new JButton("K");
+        keyMatrix[1][7].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][8] = new JButton("L");
+        keyMatrix[1][8].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[1][9] = new JButton("");
     	keyMatrix[2][0] = new JButton("ENTER");
     	keyMatrix[2][1] = new JButton("Z");
+        keyMatrix[2][1].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[2][2] = new JButton("X");
+        keyMatrix[2][2].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[2][3] = new JButton("C");
+        keyMatrix[2][3].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[2][4] = new JButton("V");
+        keyMatrix[2][4].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[2][5] = new JButton("B");
+        keyMatrix[2][5].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[2][6] = new JButton("N");
+        keyMatrix[2][6].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[2][7] = new JButton("M");
+        keyMatrix[2][7].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[2][8] = new JButton("<");
+        keyMatrix[2][8].setPreferredSize(new Dimension(50, 30));
     	keyMatrix[2][9] = new JButton("");
     	for(int r = 0; r < keyMatrix.length; r++)
     	{
@@ -74,14 +100,12 @@ public class HelperClass extends JPanel implements ActionListener
     			{
     				keyPanel.add(keyMatrix[r][c]); 
      		        keyMatrix[r][c].addActionListener(this);
-
     			}
     			 if(r != 1 && c != 9)
     			{
     				keyPanel.add(keyMatrix[r][c]);   
      		        keyMatrix[r][c].addActionListener(this);
     			}
-    			
     		}
     	}
     	playButton.setBackground(Color.WHITE);
@@ -89,7 +113,6 @@ public class HelperClass extends JPanel implements ActionListener
 	}
     public HelperClass(String inName)
     {
-        gameName = inName;
         otherPanel = new JPanel();
         JLabel theLabel = new JLabel(inName, JLabel.CENTER);
         theLabel.setFont(new Font("Helvetica", Font.BOLD, 25));
@@ -124,7 +147,6 @@ public class HelperClass extends JPanel implements ActionListener
 	
 	public static void changeColor(String inStr, Color inColor)
 	{
-		String str = inStr;
 		for(int r = 0; r < keyMatrix.length; r ++)
 		{
 			for(int c = 0; c < keyMatrix[0].length; c++)
@@ -245,7 +267,6 @@ public class HelperClass extends JPanel implements ActionListener
 		}
 		 if(txt.equals("<")  && MyJPanel.getCurCol() >= 0)
 			{
-	           System.out.println("in method");
 				if(MyJPanel.getTheTxt().length() == 1)
 				{
                     MyJPanel.clearMethod();

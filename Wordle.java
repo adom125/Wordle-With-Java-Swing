@@ -46,7 +46,6 @@ public class Wordle {
           randomWords.add("CHASE");
           randomWords.add("FOCAL");
           randomWords.add("VAGUE");
-          
           randomWords.add("SEDAN");
           randomWords.add("ALTER");
           randomWords.add("ADULT");
@@ -54,15 +53,13 @@ public class Wordle {
           randomWords.add("RUGBY");
           randomWords.add("CLOWN");
           randomWords.add("EARTH");
-          
           randomWords.add("SALTY");
-         randomWords.add("WALTZ");
-         randomWords.add("MANGO");
-         randomWords.add("MOCHA");
-         randomWords.add("MODEL");
-       
-         randomWords.add("VEGAN");
-         randomWords.add("BASIL");
+          randomWords.add("WALTZ");
+          randomWords.add("MANGO");
+          randomWords.add("MOCHA");
+          randomWords.add("MODEL");
+          randomWords.add("VEGAN");
+          randomWords.add("BASIL");
  
         int index = (int) (Math.random()*randomWords.size());
         strAns = randomWords.get(index);
@@ -99,7 +96,6 @@ public class Wordle {
     public static boolean hasRepeats(String inStr)
     {
         int repeatCount = 0;
-        System.out.println(inStr);
         for (int i = 0; i < inStr.length() - 1; i++) 
         {
             String check = inStr.substring(i, i + 1);

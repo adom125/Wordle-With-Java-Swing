@@ -7,22 +7,20 @@ import javax.swing.border.Border;
 public class MyJPanel extends JPanel implements ActionListener, KeyListener, FocusListener
 {
     private static int curRow = 0;
-    private static int curColumn = 0;
-    private static Wordle wordle = null;
+	private static int curColumn = 0;
+	private static Wordle wordle = null;
     private static JTextField[][] textFields = new JTextField[6][5]; 
-    private String pressedButton;
-    private JButton theButton;
+	private String pressedButton;
+	private JButton theButton;
 	
 	
-    public MyJPanel(String inNameButton, JButton inButton) throws FileNotFoundException
-    {	             
-	pressedButton = inNameButton;
-	theButton = inButton;
-	this.setBackground(Color.WHITE);
-	wordle = new Wordle();
-	//textFields = new JTextField[6][5];
-       // curRow = 0;
-	//curColumn = 0;
+	public MyJPanel(String inNameButton, JButton inButton) throws FileNotFoundException
+	{	             
+		pressedButton = inNameButton;
+		theButton = inButton;
+		this.setBackground(Color.WHITE);
+		wordle = new Wordle();
+		
         this.setLayout (new GridLayout(6,5,3,3));
         
         for(int r = 0; r < textFields.length; r++)
@@ -49,7 +47,6 @@ public class MyJPanel extends JPanel implements ActionListener, KeyListener, Foc
 		
 		if(txt.equals(pressedButton) && (wordle.getWinner() == true || wordle.getGameStatus() == true ))
 		{
-			System.out.println("New Game");
 			curRow = 0;
 			curColumn = 0;
 			
@@ -67,11 +64,9 @@ public class MyJPanel extends JPanel implements ActionListener, KeyListener, Foc
 		{
 			textFields[curRow][curColumn].requestFocus();
 		}
-	
 	}
 	public void keyReleased(KeyEvent e) 
 	{
-		System.out.println("EVENT: KEY RELEASED. You RELEASED a key and the system called this method.\n");
 		
 	 	textFields[curRow][curColumn].setText(textFields[curRow][curColumn].getText().toUpperCase());
 
@@ -99,14 +94,10 @@ public class MyJPanel extends JPanel implements ActionListener, KeyListener, Foc
 		                }
 		 		}
 			 	textFields[curRow][curColumn].requestFocus();
-			 	System.out.println("I just requested focus");
 
 	}
 	public void keyPressed(KeyEvent e) 
 	{
-
-		System.out.println("EVENT: KEY PRESSED. You PRESSED a key and the system called this method.\n");
-
 		 if(e.getKeyCode() == KeyEvent.VK_BACK_SPACE  && curColumn > 0)
 		{
            
@@ -168,10 +159,9 @@ public class MyJPanel extends JPanel implements ActionListener, KeyListener, Foc
                    			  textFields[row][col].setEnabled(false);
                    			}
                    		}
-                   		System.out.println(textFields[curRow][curColumn].hasFocus());
              	  }
                   curRow++;
-                  curColumn = 0;//fix
+                  curColumn = 0;
                  }
         	}
         }
@@ -191,7 +181,6 @@ public class MyJPanel extends JPanel implements ActionListener, KeyListener, Foc
 	} 
 	public void keyTyped(KeyEvent e) 
 	{
-		System.out.println("EVENT: KEY TYPED. You TYPED a key and the system called this method.\n");
 		
 	}
 	public static void displayCorrectColor()
@@ -253,7 +242,6 @@ public class MyJPanel extends JPanel implements ActionListener, KeyListener, Foc
     	textFields[curRow][curColumn].setText(inLet); 
     	if(HelperClass.enterPressed()== true && curColumn + 1 >= textFields[0].length && curRow + 1 < textFields.length )
     	{
-    		System.out.println("going here");
     	}
     	else
     	{
